@@ -79,7 +79,7 @@ var mbo = new MBO({
 ```
 
 ### Authenticated
-A number of methods require authorization. If you would like to send requests to MINDBODY in 'BusinessMode' or using Staff credentials `mbo.usertoken.issue({'Username': 'USERNAME','Password': 'PASSWORD'}, callbackFunction);`. Apply this into the header of the request with `mbo.settings.authorization = data.AccessToken;`.
+A number of methods require authorization. If you would like to send requests to MINDBODY in 'BusinessMode' or using Staff credentials `mbo.usertoken.issue({'Username': 'USERNAME','Password': 'PASSWORD'}, callbackFunction);`. Apply this into the header of the request with `mbo.Authorization = response.AccessToken;`.
 ```js
 var MBO = require('mindbody');
 
@@ -87,7 +87,8 @@ var mbo = new MBO({
     ApiKey: 'api-key',
     SiteId: 12345
 });
-mbo.settings.authorization = data.AccessToken;
+mbo.Authorization = response.AccessToken;
+
 ```
 
 You will need to generate your own API access tokens using the settings panel within MINDBODY.
